@@ -36,6 +36,7 @@ dependencies {
     runtimeOnly    group: 'org.apache.logging.log4j', name: 'log4j-api',         version: '2.23.1'
     runtimeOnly    group: 'org.apache.logging.log4j', name: 'log4j-slf4j2-impl', version: '2.23.1'
     implementation group: 'org.slf4j',                name: 'slf4j-api',         version: '2.0.13'
+    implementation group: 'org.shredzone.commons',    name: 'commons-suncalc',   version: '3.10'
 }
 
 shadowJar {

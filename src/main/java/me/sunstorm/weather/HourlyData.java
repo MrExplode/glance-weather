@@ -5,10 +5,14 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
+
 @Getter
 @RequiredArgsConstructor
 public class HourlyData {
-    private final int time;
+    @SerializedName("time")
+    private final int rawTime;
     private final String sky;
     @SerializedName("sky_title")
     private final String skyTitle;
@@ -20,6 +24,7 @@ public class HourlyData {
     private final int rain;
     @SerializedName("rain_percentage")
     private final int rainPercentage;
+
     @Setter
     private double scale;
     @Setter
@@ -28,4 +33,6 @@ public class HourlyData {
     private boolean daylight = false;
     @Setter
     private boolean sunset = false;
+    @Setter
+    private ZonedDateTime time;
 }
