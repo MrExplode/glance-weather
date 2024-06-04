@@ -7,5 +7,6 @@ public class Bootstrap {
 
     public static void main(String[] args) {
         log.info("Starting Glance weather extension");
+        new WeatherExtension().start();
     }
 }
