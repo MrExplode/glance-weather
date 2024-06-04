@@ -1,14 +1,15 @@
-package me.sunstorm.weather;
+package me.sunstorm.weather.data;
 
+import lombok.extern.slf4j.Slf4j;
+import me.sunstorm.weather.Constants;
 import org.shredzone.commons.suncalc.SunTimes;
 
 import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.List;
 
+@Slf4j
 public record TemplateData(List<HourlyData> hours) {
 
     public void calculateScale() {
@@ -29,9 +30,10 @@ public record TemplateData(List<HourlyData> hours) {
         var sunset = times.getSet();
 
         hours.forEach(h -> {
+            log.info("data: {}", h.getRainPercentage());
             var time = ZonedDateTime.ofInstant(Instant.ofEpochSecond(h.getRawTime()), timezone);
             h.setTime(time);
-            h.setDaylight(time.isAfter(sunrise) && time.isBefore(sunset));
+            h.setDaylight(time.getHour() >= sunrise.getHour() && time.getHour() <= sunset.getHour());
             h.setSunrise(time.getHour() == sunrise.getHour());
             h.setSunset(time.getHour() == sunset.getHour());
         });
