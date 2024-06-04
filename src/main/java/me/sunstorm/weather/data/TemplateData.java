@@ -30,7 +30,6 @@ public record TemplateData(List<HourlyData> hours) {
         var sunset = times.getSet();
 
         hours.forEach(h -> {
-            log.info("data: {}", h.getRainPercentage());
             var time = ZonedDateTime.ofInstant(Instant.ofEpochSecond(h.getRawTime()), timezone);
             h.setTime(time);
             h.setDaylight(time.getHour() >= sunrise.getHour() && time.getHour() <= sunset.getHour());
