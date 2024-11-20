@@ -1,0 +1,13 @@
+<configuration>
+    <shutdownHook />
+
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppende">
+        <encoder class="PatternLayoutEncoder">
+            <pattern>[%d{yyyy.MM.dd HH:mm:ss}] [%logger{0}] [%level]: %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="Console" />
+    </root>
+</configuration>
