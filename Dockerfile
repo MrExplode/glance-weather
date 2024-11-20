@@ -5,9 +5,9 @@ WORKDIR /app
 COPY . .
 RUN gradle build --no-daemon
 
-FROM eclipse-temurin:21-alpine as runner
+FROM gcr.io/distroless/java21-debian12:nonroot AS runner
 
 WORKDIR /app
 COPY --from=builder /app/build/libs/weather-extension.jar .
 
-CMD [ "java", "-jar", "weather-extension.jar" ]
+CMD [ "weather-extension.jar" ]
