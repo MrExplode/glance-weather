@@ -39,6 +39,9 @@ public class WeatherVerticle extends AbstractVerticle {
             fetchData(httpClient).onComplete((data) -> {
                 if (data.failed()) ctx.fail(data.cause());
                 ctx.put("data", data.result());
+                ctx.response()
+                        .putHeader("Widget-Title", "WEATHER")
+                        .putHeader("Widget-Content-Type", "html");
                 ctx.next();
             });
         });
