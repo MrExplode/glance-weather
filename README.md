@@ -1,4 +1,5 @@
 # Weather extension for [Glance](https://github.com/glanceapp/glance)
+[![Build Status](https://github.com/MrExplode/glance-weather/actions/workflows/build.yml/badge.svg)](https://github.com/MrExplode/glance-weather/actions)
 
 This extension is similar in functionality to the built-in weather widget,
 but the data is retrieved from local providers, thus more precise.
