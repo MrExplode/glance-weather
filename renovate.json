@@ -17,7 +17,11 @@
     },
     {
       "groupName": "logging",
-      "matchPackageNames": ["log4j*", "slf4j*"]
+      "matchPackageNames": ["logback*", "slf4j*"]
+    },
+    {
+      "groupName": "JTE",
+      "matchPackageNames": ["*jte*"]
     }
   ]
 }
