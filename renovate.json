@@ -2,5 +2,22 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
+  ],
+  "schedule": ["every weekend"],
+  "automergeSchedule": ["at any time"],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true,
+      "automergeType": "branch"
+    },
+    {
+      "groupName": "vert.x",
+      "matchPackageNames": ["vertx-stack-depchain"]
+    },
+    {
+      "groupName": "logging",
+      "matchPackageNames": ["log4j*", "slf4j*"]
+    }
   ]
 }
