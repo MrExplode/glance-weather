@@ -22,6 +22,7 @@ services:
       CITY: # the city in lowercase
       LATITUDE: # your approx. coordinates, used for daylight calculations
       LONGITUDE: # ^^
+      TIMEZONE: # your timezone e.g. Europe/London
 ```
 
 Now you can add the widget to your `glance.yml`:
