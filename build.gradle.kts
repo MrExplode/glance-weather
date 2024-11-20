@@ -49,7 +49,7 @@ dependencies {
 
 tasks.shadowJar {
     dependsOn(tasks.precompileJte)
-    transform(Log4j2PluginsCacheFileTransformer())
+
     archiveClassifier.set("")
     archiveVersion.set("")
 
