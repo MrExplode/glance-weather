@@ -5,6 +5,7 @@ plugins {
     idea
     id("com.gradleup.shadow") version "8.3.5"
     id("io.freefair.lombok") version "8.11"
+    id("gg.jte.gradle") version "3.1.15"
 }
 
 group = "me.sunstorm"
@@ -27,11 +28,18 @@ repositories {
     mavenCentral()
 }
 
+jte {
+    generate()
+    binaryStaticContent = true
+}
+
 dependencies {
+    implementation(platform("io.vertx:vertx-stack-depchain:4.5.11"))
+    implementation(group = "io.vertx",                 name = "vertx-web")
+    implementation(group = "io.vertx",                 name = "vertx-web-client")
+    implementation(group = "io.vertx",                 name = "vertx-web-templ-jte")
     implementation(group = "com.google.code.gson",     name = "gson",              version = "2.11.0")
     implementation(group = "gg.jte",                   name = "jte",               version = "3.1.15")
-    implementation(group = "io.javalin",               name = "javalin",           version = "6.3.0")
-    implementation(group = "io.javalin",               name = "javalin-rendering", version = "6.3.0")
     runtimeOnly   (group = "org.apache.logging.log4j", name = "log4j-core",        version = "2.24.1")
     runtimeOnly   (group = "org.apache.logging.log4j", name = "log4j-api",         version = "2.24.1")
     runtimeOnly   (group = "org.apache.logging.log4j", name = "log4j-slf4j2-impl", version = "2.24.1")
@@ -40,12 +48,14 @@ dependencies {
 }
 
 tasks.shadowJar {
+    dependsOn(tasks.precompileJte)
     transform(Log4j2PluginsCacheFileTransformer())
     archiveClassifier.set("")
     archiveVersion.set("")
 
     manifest {
-        attributes["Main-Class"] = "me.sunstorm.weather.Bootstrap"
+        attributes["Main-Class"] = "io.vertx.core.Launcher"
+        attributes["Main-Verticle"] = "me.sunstorm.weather.WeatherVerticle"
     }
 }
 
