@@ -35,7 +35,7 @@ public class WeatherVerticle extends AbstractVerticle {
         var httpClient = createWebClient();
 
         var router = Router.router(vertx);
-        router.get().handler((ctx) -> {
+        router.get("/").handler((ctx) -> {
             fetchData(httpClient).onComplete((data) -> {
                 if (data.failed()) ctx.fail(data.cause());
                 ctx.put("data", data.result());
@@ -45,7 +45,17 @@ public class WeatherVerticle extends AbstractVerticle {
                 ctx.next();
             });
         });
-        router.get().handler(templateHandler);
+        router.get("/").handler(templateHandler);
+        router.get("/exit").handler(ctx -> {
+            ctx.end();
+            vertx.close().onComplete(res -> {
+                if (res.succeeded()) {
+                    System.exit(0);
+                } else {
+                    log.error("vert.x close failed", res.cause());
+                }
+            });
+        });
 
         vertx.createHttpServer()
                 .requestHandler(router)
