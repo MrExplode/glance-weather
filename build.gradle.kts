@@ -38,7 +38,7 @@ jte {
 }
 
 dependencies {
-    implementation(platform("io.vertx:vertx-stack-depchain:4.5.13"))
+    implementation(platform("io.vertx:vertx-stack-depchain:4.5.14"))
     implementation(group = "io.vertx",              name = "vertx-web")
     implementation(group = "io.vertx",              name = "vertx-web-client")
     implementation(group = "io.vertx",              name = "vertx-web-templ-jte")
