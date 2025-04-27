@@ -42,7 +42,7 @@ dependencies {
     implementation(group = "io.vertx",              name = "vertx-web")
     implementation(group = "io.vertx",              name = "vertx-web-client")
     implementation(group = "io.vertx",              name = "vertx-web-templ-jte")
-    implementation(group = "com.google.code.gson",  name = "gson",                 version = "2.13.0")
+    implementation(group = "com.google.code.gson",  name = "gson",                 version = "2.13.1")
     implementation(group = "gg.jte",                name = "jte",                  version = "3.2.0")
     jteGenerate   (group = "gg.jte",                name = "jte-native-resources", version = "3.2.0")
     runtimeOnly   (group = "ch.qos.logback",        name = "logback-classic",      version = "1.5.18")
