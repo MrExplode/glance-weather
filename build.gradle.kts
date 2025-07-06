@@ -2,7 +2,7 @@ plugins {
     java
     idea
     application
-    id("io.freefair.lombok") version "8.13.1"
+    id("io.freefair.lombok") version "8.14"
     id("gg.jte.gradle") version "3.2.1"
     id("org.graalvm.buildtools.native") version "0.10.6"
 }
