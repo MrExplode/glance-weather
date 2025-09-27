@@ -4,7 +4,7 @@ plugins {
     application
     id("io.freefair.lombok") version "8.14.2"
     id("gg.jte.gradle") version "3.2.1"
-    id("org.graalvm.buildtools.native") version "0.11.0"
+    id("org.graalvm.buildtools.native") version "0.11.1"
 }
 
 group = "me.sunstorm"
