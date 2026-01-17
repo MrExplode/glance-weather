@@ -45,7 +45,7 @@ dependencies {
     implementation(group = "com.google.code.gson",  name = "gson",                 version = "2.13.2")
     implementation(group = "gg.jte",                name = "jte",                  version = "3.2.2")
     jteGenerate   (group = "gg.jte",                name = "jte-native-resources", version = "3.2.2")
-    runtimeOnly   (group = "ch.qos.logback",        name = "logback-classic",      version = "1.5.24")
+    runtimeOnly   (group = "ch.qos.logback",        name = "logback-classic",      version = "1.5.25")
     implementation(group = "org.slf4j",             name = "slf4j-api",            version = "2.0.17")
     implementation(group = "org.shredzone.commons", name = "commons-suncalc",      version = "3.11")
 }
