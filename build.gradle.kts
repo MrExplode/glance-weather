@@ -3,7 +3,7 @@ plugins {
     idea
     application
     id("io.freefair.lombok") version "9.2.0"
-    id("gg.jte.gradle") version "3.2.2"
+    id("gg.jte.gradle") version "3.2.3"
     id("org.graalvm.buildtools.native") version "0.11.4"
 }
 
@@ -43,8 +43,8 @@ dependencies {
     implementation(group = "io.vertx",              name = "vertx-web-client")
     implementation(group = "io.vertx",              name = "vertx-web-templ-jte")
     implementation(group = "com.google.code.gson",  name = "gson",                 version = "2.13.2")
-    implementation(group = "gg.jte",                name = "jte",                  version = "3.2.2")
-    jteGenerate   (group = "gg.jte",                name = "jte-native-resources", version = "3.2.2")
+    implementation(group = "gg.jte",                name = "jte",                  version = "3.2.3")
+    jteGenerate   (group = "gg.jte",                name = "jte-native-resources", version = "3.2.3")
     runtimeOnly   (group = "ch.qos.logback",        name = "logback-classic",      version = "1.5.29")
     implementation(group = "org.slf4j",             name = "slf4j-api",            version = "2.0.17")
     implementation(group = "org.shredzone.commons", name = "commons-suncalc",      version = "3.11")
