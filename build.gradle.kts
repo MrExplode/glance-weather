@@ -46,7 +46,7 @@ dependencies {
     implementation(group = "gg.jte",                name = "jte",                  version = "3.2.4")
     jteGenerate   (group = "gg.jte",                name = "jte-native-resources", version = "3.2.4")
     runtimeOnly   (group = "ch.qos.logback",        name = "logback-classic",      version = "1.5.32")
-    implementation(group = "org.slf4j",             name = "slf4j-api",            version = "2.0.17")
+    implementation(group = "org.slf4j",             name = "slf4j-api",            version = "2.0.18")
     implementation(group = "org.shredzone.commons", name = "commons-suncalc",      version = "3.11")
 }
 
